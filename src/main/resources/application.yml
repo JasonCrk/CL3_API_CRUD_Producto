@@ -1,0 +1,13 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: Emerzon Javier Kolki Martinez CL3
+    config:
+        import: secrets.yml
+    jpa:
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQLDialect
+        hibernate:
+            ddl-auto: update
