@@ -32,4 +32,9 @@ public class Product {
 
     @Column(name = "stock", columnDefinition = "INT", nullable = false)
     private int stock;
+
+    @PrePersist
+    public void setDefaultValues() {
+        this.registrationDate = LocalDate.now();
+    }
 }
