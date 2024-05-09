@@ -13,7 +13,6 @@ public class ProductMapper {
         return Product.builder()
                 .description(request.description())
                 .price(request.price())
-                .registrationDate(request.registrationDate())
                 .stock(request.stock())
                 .build();
     }
