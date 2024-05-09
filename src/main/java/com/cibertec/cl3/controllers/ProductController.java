@@ -14,6 +14,7 @@ import java.util.List;
 
 public interface ProductController {
     ResponseEntity<List<ProductResponse>> getAll();
+    ResponseEntity<ProductResponse> getById(@PathVariable("id") Integer id);
     ResponseEntity<MessageResponse> create(
             @Valid @RequestBody ProductRequest request
     );

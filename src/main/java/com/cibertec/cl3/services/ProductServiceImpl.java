@@ -33,6 +33,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ProductResponse getProductById(Integer id) {
+        var product = this.repository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "The product does not exist"));
+
+        return mapper.toResponse(product);
+    }
+
+    @Override
     @Transactional
     public MessageResponse createProduct(ProductRequest request) {
         this.repository.save(mapper.toModel(request));

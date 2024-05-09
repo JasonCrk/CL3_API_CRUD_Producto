@@ -29,6 +29,12 @@ public class ProductControllerImpl implements ProductController {
     }
 
     @Override
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductResponse> getById(Integer id) {
+        return ResponseEntity.ok(this.service.getProductById(id));
+    }
+
+    @Override
     @PostMapping
     public ResponseEntity<MessageResponse> create(ProductRequest request) {
         return new ResponseEntity<>(this.service.createProduct(request), HttpStatus.CREATED);
